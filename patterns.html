@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Pattern Tester</title>
+    <style>
+        /* CSS Styles */
+        #b1 {
+            background-color: rgb(75, 72, 72);
+        }
+        #heading1 {
+            color: antiquewhite;
+            font-size: 45px;
+            text-align: center;
+            font-style: inherit;
+        }
+        #d2 {
+            display: flex;
+        }
+        #form1 {
+            background-color: black;
+            margin-left: 150px;
+            margin-right: 100px;
+            height: 450px;
+            width: 500px;
+            border-radius: 9px;
+        }
+        #form2 {
+            margin-left: 500px;
+            margin-right: 500px;
+        }
+        #d3 {
+            background-color: black;
+            margin-left: 100px;
+            margin-right: 100px;
+            height: 450px;
+            width: 500px;
+            border-radius: 9px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            color: bisque;
+        }
+        #heading2 {
+            font-size: 25px;
+            margin-left: 40px;
+        }
+        #list {
+            margin-left: 40px;
+            font-size: 20px;
+        }
+        label {
+            font-size: 25px;
+            color: bisque;
+            margin-left: 40px;
+        }
+        #ip1 {
+            height: 30px;
+            width: 400px;
+            margin-left: 40px;
+        }
+        #txt {
+            height: 250px;
+            width: 400px;
+            text-align: left;
+            margin-left: 40px;
+        }
+        button {
+            margin-left: 150px;
+            margin-right: 100px;
+            height: 35px;
+            width: 200px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body id="b1">
+    <div id="d1">
+        <h1 id="heading1">Regex Pattern Tester</h1>
+    </div>
+    <div id="d2">
+        <div>
+            <form id="form1" action="/findMatch" method="post">
+                <br>
+                <label for="pattern">Enter Regex Pattern</label><br>
+                <input type="text" name="pattern" id="ip1" required><br><br>
+                <label for="text">Enter the Text</label><br>
+                <textarea id="txt" name="textValue" rows="6" cols="50" required></textarea>
+                <br><br>
+                <button type="submit" name="FindPattern">Match Regex Pattern</button>
+            </form>  
+        </div>
+        <div id="d3"> 
+             <h3 id="heading2">Patterns Found</h3>
+             <ul id="list">
+                {% if Notfound %}
+                    <li>No matching texts found</li>
+                {% else %}
+                    {% for match in match_list %}
+                        <li>{{ match }}</li>
+                    {% endfor %}
+                {% endif %}
+             </ul>
+        </div>          
+    </div>
+    <br>
+    <br>
+    <form action="/checkMail" id="form2">
+        <button type="submit" name="emailCheck">Email validation</button>
+    </form>
+</body>
+</html>
+
