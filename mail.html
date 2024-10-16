@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <style>
+        /* CSS Styles */
+        #b1 {
+            background-color: rgb(75, 72, 72);
+            padding: 20px;
+        }
+        #heading1 {
+            color: antiquewhite;
+            font-size: 45px;
+            text-align: center;
+            font-style: inherit;
+        }
+        #form1 {
+            background-color: black;
+            margin-left: 500px;
+            margin-right: 500px;
+            height: 300px;
+            width: 500px;
+            border-radius: 9px;
+            padding: 20px;
+        }
+        label {
+            font-size: 25px;
+            color: bisque;
+            margin-left: 40px;
+        }
+        #ip1 {
+            height: 30px;
+            width: 400px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        #FindPattern {
+            margin-left: 150px;
+            margin-right: 100px;
+            height: 35px;
+            width: 200px;
+            font-weight: bolder;
+        }
+        #redirectButton {
+            margin-left: 630px;
+            margin-right: 600px;
+            width: 250px;
+            font-weight: bold;
+            height: 40px;
+        }
+        p {
+            color: bisque;
+            margin-left: 40px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body id="b1">
+    <div id="d1">
+        <h1 id="heading1">Validate Email ID</h1>
+    </div>
+    <div id="d2">
+        <form id="form1" action="/validate" method="post">
+            <br>
+            <label for="pattern">Enter Email ID</label><br><br>
+            <input type="text" name="mail" id="ip1" required><br><br>
+            <button type="submit" id="FindPattern">Check Email</button>
+
+            <br>
+            <br>
+            <p>{{result}}</p>
+        </form>        
+    </div>
+    <br>
+    <form action="/" id="form2">
+        <button type="submit" id="redirectButton">Back to Regex Matching</button>
+    </form>
+</body>
+</html>
